@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,21 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SYOKUSUKA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0s-NL-4pD">
-                                <rect key="frame" x="16" y="312" width="343" height="42"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_syokusuka" translatesAutoresizingMaskIntoConstraints="NO" id="kr2-ps-MDX">
+                                <rect key="frame" x="-12.5" y="133.5" width="400" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="UA0-rC-dyU"/>
+                                    <constraint firstAttribute="height" constant="400" id="ODi-7a-DeF"/>
+                                    <constraint firstAttribute="width" constant="400" id="TqV-fo-1LN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.6470588235294118" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="e0s-NL-4pD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4yf-CQ-5Za"/>
-                            <constraint firstItem="e0s-NL-4pD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="LYy-NY-qmM"/>
-                            <constraint firstItem="e0s-NL-4pD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ruO-JN-bVz"/>
+                            <constraint firstItem="kr2-ps-MDX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="coL-1U-D7N"/>
+                            <constraint firstItem="kr2-ps-MDX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v6p-kk-0wS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lQO-CN-Dvw"/>
@@ -61,18 +57,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6d-7U-xJR">
-                                <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="hx3-Lo-zh6"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem image="icon_camera" id="WrS-6g-kvJ">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="pressedPhotoBtn:" destination="IUe-dm-jaS" id="ZF7-Ed-OLM"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="VgZ-pE-f7x"/>
                                     <barButtonItem style="plain" id="RwW-F1-Fn4">
-                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="bq9-Tv-ClR">
-                                            <rect key="frame" x="55" y="17" width="247" height="30"/>
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="今なにしてる？" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="bq9-Tv-ClR">
+                                            <rect key="frame" x="64" y="17" width="247" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -80,13 +79,6 @@
                                         </textField>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="B4j-3m-D4D"/>
-                                    <barButtonItem image="btn_post" style="plain" id="mWR-wd-WZQ">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f3b-od-msQ">
-                                            <rect key="frame" x="311" y="18" width="48" height="28"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="btn_post"/>
-                                        </button>
-                                    </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.95294117649999999" green="0.64705882349999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
@@ -95,7 +87,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="g6d-7U-xJR" secondAttribute="trailing" id="Mwb-A9-28o"/>
                             <constraint firstItem="g6d-7U-xJR" firstAttribute="leading" secondItem="puS-Ds-gg1" secondAttribute="leading" id="Oi0-fa-D2G"/>
-                            <constraint firstItem="Mfj-wE-v4b" firstAttribute="top" secondItem="g6d-7U-xJR" secondAttribute="bottom" id="gde-eb-2Fl"/>
+                            <constraint firstItem="g6d-7U-xJR" firstAttribute="top" secondItem="HHh-3k-RSY" secondAttribute="bottom" id="ieE-gN-8Ze"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ULf-S7-bQR">
@@ -104,8 +96,8 @@
                             <rect key="frame" x="93" y="7" width="189" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="タイムライン"/>
-                                <segment title="称号"/>
+                                <segment title="自分の投稿"/>
+                                <segment title="ランキング"/>
                             </segments>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </segmentedControl>
@@ -136,7 +128,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btn_post" width="48" height="28"/>
         <image name="icon_camera" width="30" height="26"/>
+        <image name="icon_syokusuka" width="251" height="251"/>
     </resources>
 </document>
