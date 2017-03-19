@@ -37,7 +37,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             //必要な情報が取れていることを確認(今回はemail必須)
             if result.grantedPermissions.contains("email")
             {
-                // 次の画面に遷移（後で）
+                // 次の画面に遷移
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let nextView = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                self.navigationController?.pushViewController(nextView, animated: true)
+
             }
         }
     }
@@ -45,6 +49,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if (FBSDKAccessToken.current() != nil) {
             print("User Already Logged In")
             //後で既にログインしていた場合の処理（メイン画面へ遷移）を書く
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextView = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(nextView, animated: true)
+
         } else {
             print("User not Logged In")
             let loginView : FBSDKLoginButton = FBSDKLoginButton()

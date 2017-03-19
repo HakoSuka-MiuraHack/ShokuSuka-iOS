@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="93.103448275862078"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="MQ4-J8-HA7">
             <objects>
-                <viewController id="IUe-dm-jaS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IUe-dm-jaS" customClass="HomeViewController" customModule="ShokuSuka_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HHh-3k-RSY"/>
                         <viewControllerLayoutGuide type="bottom" id="Mfj-wE-v4b"/>
