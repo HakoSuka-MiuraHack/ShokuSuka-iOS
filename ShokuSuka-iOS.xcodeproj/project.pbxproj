@@ -24,6 +24,10 @@
 		F7ADEE801E7E9C60004EE047 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE741E7E9C60004EE047 /* RealmSwift.framework */; };
 		F7ADEE821E7E9C92004EE047 /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE811E7E9C92004EE047 /* AWSSNS.framework */; };
 		F7ADEE851E7E9D98004EE047 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE841E7E9D98004EE047 /* PKHUD.framework */; };
+		F7ADEE871E7EA961004EE047 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE861E7EA961004EE047 /* AWSCore.framework */; };
+		F7ADEE891E7EAB31004EE047 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE881E7EAB31004EE047 /* Result.framework */; };
+		F7ADEE8B1E7EABA7004EE047 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE8A1E7EABA7004EE047 /* Bolts.framework */; };
+		F7ADEE8C1E7EABE6004EE047 /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE711E7E9C60004EE047 /* PINCache.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +53,6 @@
 		F732A3C51E7E8A59005650EE /* ShokuSuka_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShokuSuka_iOSTests.swift; sourceTree = "<group>"; };
 		F732A3C71E7E8A59005650EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7ADEE691E7E9C60004EE047 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
-		F7ADEE6A1E7E9C60004EE047 /* AWSAPIGateway.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSAPIGateway.framework; path = Carthage/Build/iOS/AWSAPIGateway.framework; sourceTree = "<group>"; };
-		F7ADEE6B1E7E9C60004EE047 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
-		F7ADEE6C1E7E9C60004EE047 /* AWSPinpoint.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSPinpoint.framework; path = Carthage/Build/iOS/AWSPinpoint.framework; sourceTree = "<group>"; };
 		F7ADEE6D1E7E9C60004EE047 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = Carthage/Build/iOS/AWSS3.framework; sourceTree = "<group>"; };
 		F7ADEE6E1E7E9C60004EE047 /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Decodable.framework; path = Carthage/Build/iOS/Decodable.framework; sourceTree = "<group>"; };
 		F7ADEE6F1E7E9C60004EE047 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -62,6 +63,9 @@
 		F7ADEE741E7E9C60004EE047 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		F7ADEE811E7E9C92004EE047 /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSNS.framework; path = Carthage/Build/iOS/AWSSNS.framework; sourceTree = "<group>"; };
 		F7ADEE841E7E9D98004EE047 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
+		F7ADEE861E7EA961004EE047 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
+		F7ADEE881E7EAB31004EE047 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		F7ADEE8A1E7EABA7004EE047 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +73,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7ADEE8C1E7EABE6004EE047 /* PINCache.framework in Frameworks */,
+				F7ADEE8B1E7EABA7004EE047 /* Bolts.framework in Frameworks */,
+				F7ADEE891E7EAB31004EE047 /* Result.framework in Frameworks */,
+				F7ADEE751E7E9C60004EE047 /* APIKit.framework in Frameworks */,
+				F7ADEE871E7EA961004EE047 /* AWSCore.framework in Frameworks */,
 				F7ADEE851E7E9D98004EE047 /* PKHUD.framework in Frameworks */,
 				F7ADEE821E7E9C92004EE047 /* AWSSNS.framework in Frameworks */,
-				F7ADEE751E7E9C60004EE047 /* APIKit.framework in Frameworks */,
 				F7ADEE791E7E9C60004EE047 /* AWSS3.framework in Frameworks */,
 				F7ADEE7A1E7E9C60004EE047 /* Decodable.framework in Frameworks */,
 				F7ADEE7B1E7E9C60004EE047 /* FBSDKCoreKit.framework in Frameworks */,
@@ -137,12 +145,12 @@
 		F7ADEE681E7E9C5F004EE047 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7ADEE8A1E7EABA7004EE047 /* Bolts.framework */,
+				F7ADEE881E7EAB31004EE047 /* Result.framework */,
+				F7ADEE861E7EA961004EE047 /* AWSCore.framework */,
 				F7ADEE841E7E9D98004EE047 /* PKHUD.framework */,
 				F7ADEE811E7E9C92004EE047 /* AWSSNS.framework */,
 				F7ADEE691E7E9C60004EE047 /* APIKit.framework */,
-				F7ADEE6A1E7E9C60004EE047 /* AWSAPIGateway.framework */,
-				F7ADEE6B1E7E9C60004EE047 /* AWSCore.framework */,
-				F7ADEE6C1E7E9C60004EE047 /* AWSPinpoint.framework */,
 				F7ADEE6D1E7E9C60004EE047 /* AWSS3.framework */,
 				F7ADEE6E1E7E9C60004EE047 /* Decodable.framework */,
 				F7ADEE6F1E7E9C60004EE047 /* FBSDKCoreKit.framework */,
@@ -273,6 +281,10 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AWSCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PINCache.framework",
 			);
 			outputPaths = (
 			);
