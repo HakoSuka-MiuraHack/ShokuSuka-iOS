@@ -105,10 +105,10 @@
 		F732A3A11E7E8A59005650EE = {
 			isa = PBXGroup;
 			children = (
+				F7ADEE681E7E9C5F004EE047 /* Frameworks */,
+				F732A3AB1E7E8A59005650EE /* Products */,
 				F732A3AC1E7E8A59005650EE /* ShokuSuka-iOS */,
 				F732A3C41E7E8A59005650EE /* ShokuSuka-iOSTests */,
-				F732A3AB1E7E8A59005650EE /* Products */,
-				F7ADEE681E7E9C5F004EE047 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,13 +124,12 @@
 		F732A3AC1E7E8A59005650EE /* ShokuSuka-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F74DBDB51E7ECD56006A0A2C /* assets */,
+				F74DBDB61E7ECD5D006A0A2C /* src */,
+				F74DBDB71E7ECD64006A0A2C /* storyboards */,
 				F732A3AD1E7E8A59005650EE /* AppDelegate.swift */,
-				F732A3AF1E7E8A59005650EE /* LoginViewController.swift */,
-				F74DBDB31E7ECB4B006A0A2C /* HomeViewController.swift */,
-				F732A3B11E7E8A59005650EE /* Main.storyboard */,
-				F732A3B71E7E8A59005650EE /* Assets.xcassets */,
-				F732A3B91E7E8A59005650EE /* LaunchScreen.storyboard */,
 				F732A3BC1E7E8A59005650EE /* Info.plist */,
+				F732A3B91E7E8A59005650EE /* LaunchScreen.storyboard */,
 				F732A3B41E7E8A59005650EE /* ShokuSuka_iOS.xcdatamodeld */,
 			);
 			path = "ShokuSuka-iOS";
@@ -139,10 +138,47 @@
 		F732A3C41E7E8A59005650EE /* ShokuSuka-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				F732A3C51E7E8A59005650EE /* ShokuSuka_iOSTests.swift */,
 				F732A3C71E7E8A59005650EE /* Info.plist */,
+				F732A3C51E7E8A59005650EE /* ShokuSuka_iOSTests.swift */,
 			);
 			path = "ShokuSuka-iOSTests";
+			sourceTree = "<group>";
+		};
+		F74DBDB51E7ECD56006A0A2C /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				F732A3B71E7E8A59005650EE /* Assets.xcassets */,
+			);
+			name = assets;
+			path = assets;
+			sourceTree = "<group>";
+		};
+		F74DBDB61E7ECD5D006A0A2C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F74DBDB81E7ECDBC006A0A2C /* controllers */,
+			);
+			name = src;
+			path = src;
+			sourceTree = "<group>";
+		};
+		F74DBDB71E7ECD64006A0A2C /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F732A3B11E7E8A59005650EE /* Main.storyboard */,
+			);
+			name = storyboards;
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		F74DBDB81E7ECDBC006A0A2C /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F74DBDB31E7ECB4B006A0A2C /* HomeViewController.swift */,
+				F732A3AF1E7E8A59005650EE /* LoginViewController.swift */,
+			);
+			name = controllers;
+			path = controllers;
 			sourceTree = "<group>";
 		};
 		F7ADEE681E7E9C5F004EE047 /* Frameworks */ = {
@@ -334,6 +370,7 @@
 				F732A3B21E7E8A59005650EE /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		F732A3B91E7E8A59005650EE /* LaunchScreen.storyboard */ = {
@@ -342,6 +379,7 @@
 				F732A3BA1E7E8A59005650EE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
