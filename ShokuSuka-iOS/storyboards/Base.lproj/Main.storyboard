@@ -59,7 +59,44 @@
                     <view key="view" contentMode="scaleToFill" id="puS-Ds-gg1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6d-7U-xJR">
+                                <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="hx3-Lo-zh6"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem image="icon_camera" id="WrS-6g-kvJ">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VgZ-pE-f7x"/>
+                                    <barButtonItem style="plain" id="RwW-F1-Fn4">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="bq9-Tv-ClR">
+                                            <rect key="frame" x="55" y="17" width="247" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="B4j-3m-D4D"/>
+                                    <barButtonItem image="btn_post" style="plain" id="mWR-wd-WZQ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f3b-od-msQ">
+                                            <rect key="frame" x="311" y="18" width="48" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="btn_post"/>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.95294117649999999" green="0.64705882349999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="g6d-7U-xJR" secondAttribute="trailing" id="Mwb-A9-28o"/>
+                            <constraint firstItem="g6d-7U-xJR" firstAttribute="leading" secondItem="puS-Ds-gg1" secondAttribute="leading" id="Oi0-fa-D2G"/>
+                            <constraint firstItem="Mfj-wE-v4b" firstAttribute="top" secondItem="g6d-7U-xJR" secondAttribute="bottom" id="gde-eb-2Fl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ULf-S7-bQR">
                         <nil key="title"/>
@@ -83,7 +120,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VLl-7V-LVz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mpR-bb-yAs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mpR-bb-yAs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.95294117649999999" green="0.64705882349999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,4 +135,8 @@
             <point key="canvasLocation" x="136.80000000000001" y="93.103448275862078"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btn_post" width="48" height="28"/>
+        <image name="icon_camera" width="30" height="26"/>
+    </resources>
 </document>

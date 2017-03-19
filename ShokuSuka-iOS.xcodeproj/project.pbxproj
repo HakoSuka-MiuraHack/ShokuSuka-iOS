@@ -15,6 +15,7 @@
 		F732A3BB1E7E8A59005650EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F732A3B91E7E8A59005650EE /* LaunchScreen.storyboard */; };
 		F732A3C61E7E8A59005650EE /* ShokuSuka_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732A3C51E7E8A59005650EE /* ShokuSuka_iOSTests.swift */; };
 		F74DBDB41E7ECB4B006A0A2C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74DBDB31E7ECB4B006A0A2C /* HomeViewController.swift */; };
+		F74DBDBA1E7ED0D8006A0A2C /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74DBDB91E7ED0D8006A0A2C /* Home.xcassets */; };
 		F7ADEE751E7E9C60004EE047 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE691E7E9C60004EE047 /* APIKit.framework */; };
 		F7ADEE791E7E9C60004EE047 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE6D1E7E9C60004EE047 /* AWSS3.framework */; };
 		F7ADEE7A1E7E9C60004EE047 /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE6E1E7E9C60004EE047 /* Decodable.framework */; };
@@ -54,6 +55,7 @@
 		F732A3C51E7E8A59005650EE /* ShokuSuka_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShokuSuka_iOSTests.swift; sourceTree = "<group>"; };
 		F732A3C71E7E8A59005650EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F74DBDB31E7ECB4B006A0A2C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F74DBDB91E7ED0D8006A0A2C /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Home.xcassets; sourceTree = "<group>"; };
 		F7ADEE691E7E9C60004EE047 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		F7ADEE6D1E7E9C60004EE047 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = Carthage/Build/iOS/AWSS3.framework; sourceTree = "<group>"; };
 		F7ADEE6E1E7E9C60004EE047 /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Decodable.framework; path = Carthage/Build/iOS/Decodable.framework; sourceTree = "<group>"; };
@@ -148,8 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				F732A3B71E7E8A59005650EE /* Assets.xcassets */,
+				F74DBDB91E7ED0D8006A0A2C /* Home.xcassets */,
 			);
-			name = assets;
 			path = assets;
 			sourceTree = "<group>";
 		};
@@ -158,7 +160,6 @@
 			children = (
 				F74DBDB81E7ECDBC006A0A2C /* controllers */,
 			);
-			name = src;
 			path = src;
 			sourceTree = "<group>";
 		};
@@ -167,7 +168,6 @@
 			children = (
 				F732A3B11E7E8A59005650EE /* Main.storyboard */,
 			);
-			name = storyboards;
 			path = storyboards;
 			sourceTree = "<group>";
 		};
@@ -177,7 +177,6 @@
 				F74DBDB31E7ECB4B006A0A2C /* HomeViewController.swift */,
 				F732A3AF1E7E8A59005650EE /* LoginViewController.swift */,
 			);
-			name = controllers;
 			path = controllers;
 			sourceTree = "<group>";
 		};
@@ -290,6 +289,7 @@
 			files = (
 				F732A3BB1E7E8A59005650EE /* LaunchScreen.storyboard in Resources */,
 				F732A3B81E7E8A59005650EE /* Assets.xcassets in Resources */,
+				F74DBDBA1E7ED0D8006A0A2C /* Home.xcassets in Resources */,
 				F732A3B31E7E8A59005650EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
