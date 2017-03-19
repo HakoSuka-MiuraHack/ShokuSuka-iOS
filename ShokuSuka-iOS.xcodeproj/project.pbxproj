@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F732A3AE1E7E8A59005650EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732A3AD1E7E8A59005650EE /* AppDelegate.swift */; };
-		F732A3B01E7E8A59005650EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732A3AF1E7E8A59005650EE /* ViewController.swift */; };
+		F732A3B01E7E8A59005650EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732A3AF1E7E8A59005650EE /* LoginViewController.swift */; };
 		F732A3B31E7E8A59005650EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F732A3B11E7E8A59005650EE /* Main.storyboard */; };
 		F732A3B61E7E8A59005650EE /* ShokuSuka_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F732A3B41E7E8A59005650EE /* ShokuSuka_iOS.xcdatamodeld */; };
 		F732A3B81E7E8A59005650EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F732A3B71E7E8A59005650EE /* Assets.xcassets */; };
@@ -43,7 +43,7 @@
 /* Begin PBXFileReference section */
 		F732A3AA1E7E8A59005650EE /* ShokuSuka-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ShokuSuka-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F732A3AD1E7E8A59005650EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F732A3AF1E7E8A59005650EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F732A3AF1E7E8A59005650EE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F732A3B21E7E8A59005650EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F732A3B51E7E8A59005650EE /* ShokuSuka_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShokuSuka_iOS.xcdatamodel; sourceTree = "<group>"; };
 		F732A3B71E7E8A59005650EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				F732A3AD1E7E8A59005650EE /* AppDelegate.swift */,
-				F732A3AF1E7E8A59005650EE /* ViewController.swift */,
+				F732A3AF1E7E8A59005650EE /* LoginViewController.swift */,
 				F732A3B11E7E8A59005650EE /* Main.storyboard */,
 				F732A3B71E7E8A59005650EE /* Assets.xcassets */,
 				F732A3B91E7E8A59005650EE /* LaunchScreen.storyboard */,
@@ -300,7 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F732A3B61E7E8A59005650EE /* ShokuSuka_iOS.xcdatamodeld in Sources */,
-				F732A3B01E7E8A59005650EE /* ViewController.swift in Sources */,
+				F732A3B01E7E8A59005650EE /* LoginViewController.swift in Sources */,
 				F732A3AE1E7E8A59005650EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
