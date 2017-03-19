@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import PKHUD
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
@@ -49,10 +50,15 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if (FBSDKAccessToken.current() != nil) {
             print("User Already Logged In")
             //後で既にログインしていた場合の処理（メイン画面へ遷移）を書く
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let nextView = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-            self.navigationController?.pushViewController(nextView, animated: true)
-
+            HUD.show(.progress)
+            //ログイン済みでも2秒待つ
+            let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(2.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
+                HUD.flash(.success, delay: 1.0)
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let nextView = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                self.navigationController?.pushViewController(nextView, animated: true)
+            })
         } else {
             print("User not Logged In")
             let loginView : FBSDKLoginButton = FBSDKLoginButton()

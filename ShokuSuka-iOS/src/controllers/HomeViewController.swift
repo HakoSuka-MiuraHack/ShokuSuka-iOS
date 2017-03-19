@@ -7,16 +7,31 @@
 //
 
 import UIKit
-
+import FBSDKCoreKit
+import FBSDKLoginKit
 class HomeViewController: UIViewController {
+    @IBOutlet weak var postSegueBtn: UIButton!
+    @IBOutlet weak var rankingView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = true
+        self.postSegueBtn.layer.cornerRadius = 5.0
+        self.postSegueBtn.clipsToBounds = true
         // Do any additional setup after loading the view.
+        self.rankingView.isHidden = true
     }
-
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func switchView(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0{
+            self.rankingView.isHidden = true
+        }else{
+            self.rankingView.isHidden = false
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
