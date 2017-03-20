@@ -8,6 +8,7 @@
 
 import UIKit
 import PINRemoteImage
+import FacebookShare
 
 class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var user: User?
@@ -31,7 +32,9 @@ class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         self.navigationController?.navigationBar.barTintColor = UIColor.hexStr(hexStr: "#F3A537", alpha: 1.0)
     }
 
-    func takePicture(){
+    @IBAction func postUpdate(_ sender: UIBarButtonItem) {
+    }
+    @IBAction func takePicture(_ sender: UIButton) {
         let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
         // カメラが利用可能かチェック
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
@@ -40,10 +43,9 @@ class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             cameraPicker.sourceType = sourceType
             cameraPicker.delegate = self
             self.present(cameraPicker, animated: true, completion: nil)
-            
         }
     }
-    func pickImageFromLibrary() {
+    @IBAction func pickImageFromLibrary(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             //写真ライブラリ(カメラロール)表示用のViewControllerを宣言しているという理解
             let controller = UIImagePickerController()
@@ -61,22 +63,16 @@ class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         }
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+         picker.dismiss(animated: true, completion: nil)
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             print(pickedImage)
-            
-            //            FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
-            //            photo.image = ここにUIImage;
-            //            photo.userGenerated = YES;
-            //            FBSDKSharePhotoContent * content = [[FBSDKSharePhotoContent alloc] init];
-            //            content.photos = @[photo];
-            //
-            //            [FBSDKShareDialog showFromViewController:self
-            //            withContent:content
-            //            delegate:nil];
+            let photo = Photo(image: pickedImage, userGenerated: true)
+            let shareContent = PhotoShareContent(photos: [photo])
+            try! ShareDialog.show(from: self, content: shareContent)
         }
         
-        picker.dismiss(animated: true, completion: nil)
+//        picker.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

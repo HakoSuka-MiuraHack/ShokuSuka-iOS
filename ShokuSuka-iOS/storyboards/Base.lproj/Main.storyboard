@@ -65,7 +65,7 @@
                                 <items>
                                     <barButtonItem style="plain" id="oSt-Av-Muq">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H9o-38-YqL">
-                                            <rect key="frame" x="16" y="14.5" width="35" height="35"/>
+                                            <rect key="frame" x="16" y="15" width="35" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="icon_sample"/>
                                         </button>
@@ -214,6 +214,9 @@
                                         <state key="normal" title="ライブラリから探す">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pickImageFromLibrary:" destination="ZAu-Jn-fLX" eventType="touchUpInside" id="kvZ-tf-TWL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqo-tu-vei">
                                         <rect key="frame" x="8" y="31" width="359" height="40"/>
@@ -225,6 +228,9 @@
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="写真を撮る" image="icon_camera"/>
+                                        <connections>
+                                            <action selector="takePicture:" destination="ZAu-Jn-fLX" eventType="touchUpInside" id="qK4-WB-7zb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.64705882349999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -256,6 +262,9 @@
                     <navigationItem key="navigationItem" title="近況アップデート" id="5wG-A9-xiJ">
                         <barButtonItem key="rightBarButtonItem" title="投稿" id="QK6-zI-q4n">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="postUpdate:" destination="ZAu-Jn-fLX" id="kIx-6w-Oxt"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
