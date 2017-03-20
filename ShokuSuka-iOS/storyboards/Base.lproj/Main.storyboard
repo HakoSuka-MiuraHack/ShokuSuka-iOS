@@ -65,7 +65,7 @@
                                 <items>
                                     <barButtonItem style="plain" id="oSt-Av-Muq">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H9o-38-YqL">
-                                            <rect key="frame" x="16" y="15" width="35" height="35"/>
+                                            <rect key="frame" x="16" y="14.5" width="35" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="icon_sample"/>
                                         </button>
@@ -116,7 +116,7 @@
                         <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="8Nu-4f-PgF"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mSN-t0-AoU">
-                            <rect key="frame" x="93" y="7" width="189" height="31"/>
+                            <rect key="frame" x="93" y="6.5" width="189" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="自分の投稿"/>
@@ -281,6 +281,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="captionTextView" destination="Alb-YZ-fqq" id="p7F-if-BAM"/>
+                        <outlet property="noticeLabel" destination="zgT-wT-Lk9" id="TwI-5Q-6fg"/>
                         <outlet property="thumbnailImageView" destination="iYl-aT-w5T" id="iaO-5O-oEo"/>
                         <outlet property="userNameLabel" destination="Qm9-Ca-Aqe" id="1h8-qA-5cj"/>
                     </connections>

@@ -61,6 +61,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 //   let userName = (result as! Dictionary<String,Any>?)!["name"]!
                 print("User Name is: \(user)")
                 
+                //ユーザ認証
+                S3Uploader.configureService()
                 //クールタイムを1秒設けてある
                 let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(1.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
                 DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {

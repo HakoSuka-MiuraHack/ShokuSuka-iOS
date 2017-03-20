@@ -19,6 +19,7 @@ class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var captionTextView: PlaceHolderTextView!
     
+    @IBOutlet weak var noticeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,21 @@ class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
         // myComposeViewの画面遷移.
         self.present(myComposeView, animated: true, completion: nil)
+        
+        myComposeView.completionHandler = {
+            (result:SLComposeViewControllerResult) -> () in
+            switch (result) {
+            case SLComposeViewControllerResult.done:
+                print("投稿成功")
+                for image in self.postedImages {
+                    S3Uploader.uploadImage(image, fileName: "\((self.user?.id)!)/\(NSDate().timeIntervalSince1970).png")
+                }
+                
+                break
+            case SLComposeViewControllerResult.cancelled:
+                break
+            }
+        }
     }
     @IBAction func takePicture(_ sender: UIButton) {
         let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
@@ -88,7 +104,10 @@ class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             self.captionTextView.attributeWithImage(image: pickedImage, rect: CGRect(x: 0, y: 0, width: pickedImage.size.width / 20, height: pickedImage.size.height / 20))
         }
         
-//        picker.dismiss(animated: true, completion: nil)
+        if postedImages.count > 0 {
+            noticeLabel.text = "OK!"
+            noticeLabel.textColor = UIColor(red: 0.1, green: 0.6, blue: 0.2, alpha: 1.0)
+        }
     }
 
     override func didReceiveMemoryWarning() {
