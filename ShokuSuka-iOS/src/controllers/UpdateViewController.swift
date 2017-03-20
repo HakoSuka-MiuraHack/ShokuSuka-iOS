@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import PINRemoteImage
 
 class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-
+    var user: User?
+    
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var captionTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        self.navigationController?.navigationBar.tintColor = UIColor.hexStr(hexStr: "#F3A537", alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = UIColor.white
+        
+        self.thumbnailImageView.pin_setImage(from: URL(string: (user?.thumbnaiUrl)!))
+        self.userNameLabel.text = "\((user?.name)!) さん"
         // Do any additional setup after loading the view.
     }
     override func viewWillDisappear(_ animated: Bool) {

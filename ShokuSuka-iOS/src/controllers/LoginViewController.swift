@@ -45,7 +45,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     func returnUserData() {
         
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me",
-                                                                 parameters: ["fields": "id,email,gender,link,locale,name,timezone,updated_time,verified,last_name,first_name,middle_name"])
+                                                                 parameters: ["fields": "id,email,gender,link,locale,name,timezone,updated_time,picture.type(large),verified,last_name,first_name,middle_name"])
         graphRequest.start(completionHandler: { (connection, result, error) -> Void in
             
             if ((error) != nil)
@@ -56,9 +56,20 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             else
             {
                 print("fetched user: \(result)")
+                let user = try! User.decode((result as! Dictionary<String,Any>?)!)
                 
-                let userName = (result as! Dictionary<String,Any>?)!["name"]!
-                print("User Name is: \(userName)")
+                //   let userName = (result as! Dictionary<String,Any>?)!["name"]!
+                print("User Name is: \(user)")
+                
+                //クールタイムを1秒設けてある
+                let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(1.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
+                    HUD.flash(.success, delay: 1.0)
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let nextView = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                    nextView.user = user
+                    self.navigationController?.pushViewController(nextView, animated: true)
+                })
             }
         })
     }
@@ -68,15 +79,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             //後で既にログインしていた場合の処理（メイン画面へ遷移）を書く
             HUD.show(.progress)
             returnUserData()
-            //ログイン済みでも2秒待つ
-            let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(2.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-            DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
-                HUD.flash(.success, delay: 1.0)
-                
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let nextView = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                self.navigationController?.pushViewController(nextView, animated: true)
-            })
         } else {
             print("User not Logged In")
             let loginView : FBSDKLoginButton = FBSDKLoginButton()

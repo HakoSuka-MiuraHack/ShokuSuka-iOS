@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var rankingView: UIView!
     @IBOutlet weak var userIconBtn: UIButton!
 
+    var user: User?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
@@ -24,6 +25,8 @@ class HomeViewController: UIViewController {
         self.postSegueBtn.clipsToBounds = true
         // Do any additional setup after loading the view.
         self.rankingView.isHidden = true
+        
+        self.userIconBtn.pin_setImage(from: URL(string: (user?.thumbnaiUrl)!))
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
@@ -38,6 +41,12 @@ class HomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func transitToUpdateView(_ sender: UIButton) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextView = mainStoryboard.instantiateViewController(withIdentifier: "UpdateViewController") as! UpdateViewController
+        nextView.user = user
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
     
 

@@ -80,7 +80,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="ZAu-Jn-fLX" kind="show" id="2eT-Lx-HAR"/>
+                                                <action selector="transitToUpdateView:" destination="IUe-dm-jaS" eventType="touchUpInside" id="9t5-7P-Vw0"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -132,6 +132,7 @@
                         <outlet property="postSegueBtn" destination="Dw4-37-FBO" id="ScI-Lw-mOj"/>
                         <outlet property="rankingView" destination="Rxg-gW-aWs" id="hse-NF-4UW"/>
                         <outlet property="userIconBtn" destination="H9o-38-YqL" id="mhL-5a-1tD"/>
+                        <segue destination="ZAu-Jn-fLX" kind="show" id="2nT-93-vNZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSj-rh-lcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,7 +142,7 @@
         <!--近況アップデート-->
         <scene sceneID="upV-Yy-V2m">
             <objects>
-                <viewController id="ZAu-Jn-fLX" customClass="UpdateViewController" customModule="ShokuSuka_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZAu-Jn-fLX" customClass="UpdateViewController" customModule="ShokuSuka_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mKM-ma-v2n"/>
                         <viewControllerLayoutGuide type="bottom" id="WuI-Xk-0tb"/>
@@ -168,13 +169,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="写真つきのコメントで自慢しよう！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgT-wT-Lk9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="写真を追加してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgT-wT-Lk9">
                                         <rect key="frame" x="66" y="43" width="301" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="NUQ-84-qyJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <color key="textColor" red="0.95294117649999999" green="0.64705882349999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -192,14 +193,24 @@
                                     <constraint firstItem="zgT-wT-Lk9" firstAttribute="top" secondItem="Qm9-Ca-Aqe" secondAttribute="bottom" constant="4" id="zQe-WO-uNN"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="文言どうしよ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Alb-YZ-fqq">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Alb-YZ-fqq" customClass="PlaceHolderTextView" customModule="ShokuSuka_iOS" customModuleProvider="target">
                                 <rect key="frame" x="12" y="142" width="351" height="390"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="今なにしてる？"/>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBR-ID-pma">
                                 <rect key="frame" x="0.0" y="532" width="375" height="135"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZN-pL-JxI">
+                                        <rect key="frame" x="20" y="25" width="45" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icon_camera_gray"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.64705882349999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="V69-Ua-TZN"/>
@@ -225,6 +236,11 @@
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="captionTextView" destination="Alb-YZ-fqq" id="K70-59-s71"/>
+                        <outlet property="thumbnailImageView" destination="iYl-aT-w5T" id="iaO-5O-oEo"/>
+                        <outlet property="userNameLabel" destination="Qm9-Ca-Aqe" id="1h8-qA-5cj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbk-mu-bgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -251,6 +267,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_camera_gray" width="42" height="36"/>
         <image name="icon_sample" width="688" height="647"/>
         <image name="icon_syokusuka" width="251" height="251"/>
     </resources>
