@@ -7,20 +7,51 @@
 //
 
 import UIKit
+import Social
+import PINRemoteImage
+import FacebookShare
 
 class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-
+    var user: User?
+    var postedImages : [UIImage] = []
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var captionTextView: PlaceHolderTextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        self.navigationController?.navigationBar.tintColor = UIColor.hexStr(hexStr: "#F3A537", alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = UIColor.white
+        
+        self.thumbnailImageView.pin_setImage(from: URL(string: (user?.thumbnaiUrl)!))
+        self.userNameLabel.text = "\((user?.name)!) さん"
         // Do any additional setup after loading the view.
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = UIColor.hexStr(hexStr: "#F3A537", alpha: 1.0)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.white        
+    }
 
-    func takePicture(){
+    @IBAction func postUpdate(_ sender: UIBarButtonItem) {
+        var myComposeView : SLComposeViewController!
+        myComposeView = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+        
+        // 投稿するテキストを指定.
+        myComposeView.setInitialText(self.captionTextView.text)
+        
+        // 投稿する画像を指定.
+        for image in postedImages {
+            myComposeView.add(image)
+        }
+        
+        // myComposeViewの画面遷移.
+        self.present(myComposeView, animated: true, completion: nil)
+    }
+    @IBAction func takePicture(_ sender: UIButton) {
         let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
         // カメラが利用可能かチェック
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
@@ -29,10 +60,9 @@ class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             cameraPicker.sourceType = sourceType
             cameraPicker.delegate = self
             self.present(cameraPicker, animated: true, completion: nil)
-            
         }
     }
-    func pickImageFromLibrary() {
+    @IBAction func pickImageFromLibrary(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             //写真ライブラリ(カメラロール)表示用のViewControllerを宣言しているという理解
             let controller = UIImagePickerController()
@@ -50,22 +80,15 @@ class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         }
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+         picker.dismiss(animated: true, completion: nil)
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             print(pickedImage)
-            
-            //            FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
-            //            photo.image = ここにUIImage;
-            //            photo.userGenerated = YES;
-            //            FBSDKSharePhotoContent * content = [[FBSDKSharePhotoContent alloc] init];
-            //            content.photos = @[photo];
-            //
-            //            [FBSDKShareDialog showFromViewController:self
-            //            withContent:content
-            //            delegate:nil];
+            postedImages.append(pickedImage)
+            self.captionTextView.attributeWithImage(image: pickedImage, rect: CGRect(x: 0, y: 0, width: pickedImage.size.width / 20, height: pickedImage.size.height / 20))
         }
         
-        picker.dismiss(animated: true, completion: nil)
+//        picker.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
