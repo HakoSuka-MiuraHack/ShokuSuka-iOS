@@ -65,7 +65,7 @@
                                 <items>
                                     <barButtonItem style="plain" id="oSt-Av-Muq">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H9o-38-YqL">
-                                            <rect key="frame" x="16" y="15" width="35" height="35"/>
+                                            <rect key="frame" x="16" y="14.5" width="35" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="icon_sample"/>
                                         </button>
@@ -205,15 +205,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBR-ID-pma">
                                 <rect key="frame" x="0.0" y="532" width="375" height="135"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZN-pL-JxI">
-                                        <rect key="frame" x="20" y="25" width="45" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="icon_camera_gray"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1g-5Z-rdy">
+                                        <rect key="frame" x="8" y="79" width="359" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="6hX-bS-Xl6"/>
+                                        </constraints>
+                                        <state key="normal" title="ライブラリから探す">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqo-tu-vei">
+                                        <rect key="frame" x="8" y="31" width="359" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="UoF-ce-Et8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="写真を撮る" image="icon_camera"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.64705882349999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Mqo-tu-vei" secondAttribute="trailing" constant="8" id="OCC-OH-ogC"/>
                                     <constraint firstAttribute="height" constant="135" id="V69-Ua-TZN"/>
+                                    <constraint firstItem="h1g-5Z-rdy" firstAttribute="top" secondItem="Mqo-tu-vei" secondAttribute="bottom" constant="8" id="WH7-6i-zZ2"/>
+                                    <constraint firstAttribute="trailing" secondItem="h1g-5Z-rdy" secondAttribute="trailing" constant="8" id="cYJ-qd-8Xb"/>
+                                    <constraint firstItem="h1g-5Z-rdy" firstAttribute="leading" secondItem="TBR-ID-pma" secondAttribute="leading" constant="8" id="coW-kN-Q8a"/>
+                                    <constraint firstItem="Mqo-tu-vei" firstAttribute="leading" secondItem="TBR-ID-pma" secondAttribute="leading" constant="8" id="qtc-VY-QIS"/>
+                                    <constraint firstAttribute="bottom" secondItem="h1g-5Z-rdy" secondAttribute="bottom" constant="16" id="z6b-8t-eV0"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -267,7 +289,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_camera_gray" width="42" height="36"/>
+        <image name="icon_camera" width="30" height="26"/>
         <image name="icon_sample" width="688" height="647"/>
         <image name="icon_syokusuka" width="251" height="251"/>
     </resources>
