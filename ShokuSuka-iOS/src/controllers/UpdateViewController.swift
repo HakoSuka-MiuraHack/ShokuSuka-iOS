@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import Social
 import PINRemoteImage
 import FacebookShare
 
 class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var user: User?
-    
+    var postedImages : [UIImage] = []
     @IBOutlet weak var thumbnailImageView: UIImageView!
     
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var captionTextView: UITextView!
+    @IBOutlet weak var captionTextView: PlaceHolderTextView!
     
     
     override func viewDidLoad() {
@@ -31,8 +32,24 @@ class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = UIColor.hexStr(hexStr: "#F3A537", alpha: 1.0)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.white        
+    }
 
     @IBAction func postUpdate(_ sender: UIBarButtonItem) {
+        var myComposeView : SLComposeViewController!
+        myComposeView = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+        
+        // 投稿するテキストを指定.
+        myComposeView.setInitialText(self.captionTextView.text)
+        
+        // 投稿する画像を指定.
+        for image in postedImages {
+            myComposeView.add(image)
+        }
+        
+        // myComposeViewの画面遷移.
+        self.present(myComposeView, animated: true, completion: nil)
     }
     @IBAction func takePicture(_ sender: UIButton) {
         let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
@@ -67,9 +84,8 @@ class UpdateViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             print(pickedImage)
-            let photo = Photo(image: pickedImage, userGenerated: true)
-            let shareContent = PhotoShareContent(photos: [photo])
-            try! ShareDialog.show(from: self, content: shareContent)
+            postedImages.append(pickedImage)
+            self.captionTextView.attributeWithImage(image: pickedImage, rect: CGRect(x: 0, y: 0, width: pickedImage.size.width / 20, height: pickedImage.size.height / 20))
         }
         
 //        picker.dismiss(animated: true, completion: nil)

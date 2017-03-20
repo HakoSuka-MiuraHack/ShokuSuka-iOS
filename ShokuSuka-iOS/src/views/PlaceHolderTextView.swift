@@ -66,10 +66,19 @@ class PlaceHolderTextView: UITextView {
             self.placeHolderLabel.alpha = 1.0
         }else{
             self.placeHolderLabel.alpha = 0.0
-            let range = self.selectedTextRange
-            // キャレットを現在の位置からひとつ後ろに移動する（-1）
-            let position = self.position(from: (range?.start)!, offset:0)
-            self.selectedTextRange = self.textRange(from: position!, to: position!)
         }
+    }
+    func attributeWithImage(image: UIImage, rect:CGRect) {
+        
+        let attrString = NSMutableAttributedString(attributedString: self.attributedText)
+        attrString.insert(NSMutableAttributedString(string: "\n"), at: self.attributedText.length)
+        // 画像はNSTextAttachmentで
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = rect
+        attrString.append(NSAttributedString(attachment: attachment))
+        attrString.insert(NSMutableAttributedString(string: "\n"), at: self.attributedText.length)
+        
+        self.attributedText = attrString
     }
 }
