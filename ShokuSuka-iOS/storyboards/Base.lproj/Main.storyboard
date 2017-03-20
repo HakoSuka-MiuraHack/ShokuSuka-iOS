@@ -131,6 +131,7 @@
                     <connections>
                         <outlet property="postSegueBtn" destination="Dw4-37-FBO" id="ScI-Lw-mOj"/>
                         <outlet property="rankingView" destination="Rxg-gW-aWs" id="hse-NF-4UW"/>
+                        <outlet property="userIconBtn" destination="H9o-38-YqL" id="mhL-5a-1tD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSj-rh-lcl" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,9 +9,12 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import PINRemoteImage
+
 class HomeViewController: UIViewController {
     @IBOutlet weak var postSegueBtn: UIButton!
     @IBOutlet weak var rankingView: UIView!
+    @IBOutlet weak var userIconBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
