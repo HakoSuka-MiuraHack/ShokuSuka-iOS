@@ -65,7 +65,7 @@
                                 <items>
                                     <barButtonItem style="plain" id="oSt-Av-Muq">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H9o-38-YqL">
-                                            <rect key="frame" x="16" y="14.5" width="35" height="35"/>
+                                            <rect key="frame" x="16" y="15" width="35" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="icon_sample"/>
                                         </button>
@@ -88,13 +88,24 @@
                                 </items>
                                 <color key="barTintColor" red="0.95294117649999999" green="0.64705882349999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rfO-Mr-XiC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rfO-Mr-XiC">
                                 <rect key="frame" x="0.0" y="128" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rxg-gW-aWs">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_ranking" translatesAutoresizingMaskIntoConstraints="NO" id="DgH-54-gDp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="DgH-54-gDp" firstAttribute="leading" secondItem="Rxg-gW-aWs" secondAttribute="leading" id="18N-gK-yme"/>
+                                    <constraint firstAttribute="trailing" secondItem="DgH-54-gDp" secondAttribute="trailing" id="1ov-J2-c6o"/>
+                                    <constraint firstItem="DgH-54-gDp" firstAttribute="top" secondItem="Rxg-gW-aWs" secondAttribute="top" id="bln-ns-Biy"/>
+                                    <constraint firstAttribute="bottom" secondItem="DgH-54-gDp" secondAttribute="bottom" id="qe4-Qt-atY"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,10 +127,10 @@
                         <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="8Nu-4f-PgF"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mSN-t0-AoU">
-                            <rect key="frame" x="93" y="6.5" width="189" height="31"/>
+                            <rect key="frame" x="93" y="7" width="189" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="自分の投稿"/>
+                                <segment title="タイムライン"/>
                                 <segment title="ランキング"/>
                             </segments>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,6 +142,7 @@
                     <connections>
                         <outlet property="postSegueBtn" destination="Dw4-37-FBO" id="ScI-Lw-mOj"/>
                         <outlet property="rankingView" destination="Rxg-gW-aWs" id="hse-NF-4UW"/>
+                        <outlet property="tableView" destination="rfO-Mr-XiC" id="9bA-3d-9uM"/>
                         <outlet property="userIconBtn" destination="H9o-38-YqL" id="mhL-5a-1tD"/>
                         <segue destination="ZAu-Jn-fLX" kind="show" id="2nT-93-vNZ"/>
                     </connections>
@@ -314,5 +326,6 @@
         <image name="icon_camera" width="30" height="26"/>
         <image name="icon_sample" width="688" height="647"/>
         <image name="icon_syokusuka" width="251" height="251"/>
+        <image name="img_ranking" width="358" height="524"/>
     </resources>
 </document>

@@ -37,9 +37,12 @@
 		F7ADEE8B1E7EABA7004EE047 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE8A1E7EABA7004EE047 /* Bolts.framework */; };
 		F7ADEE8C1E7EABE6004EE047 /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ADEE711E7E9C60004EE047 /* PINCache.framework */; };
 		F7D3330C1E7FA10100354B93 /* S3Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D3330B1E7FA10100354B93 /* S3Uploader.swift */; };
+		F7D3330E1E7FA81900354B93 /* GetUserTimeLineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D3330D1E7FA81900354B93 /* GetUserTimeLineRequest.swift */; };
+		F7D333101E7FA89E00354B93 /* FBPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D3330F1E7FA89E00354B93 /* FBPosts.swift */; };
+		F7D333131E7FB26400354B93 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D333111E7FB26400354B93 /* ImageCollectionViewCell.swift */; };
+		F7D333141E7FB26400354B93 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D333121E7FB26400354B93 /* ImageCollectionViewCell.xib */; };
 		F7FDE8311E7F7A2400102641 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7FDE8301E7F7A2400102641 /* FacebookShare.framework */; };
 		F7FDE8351E7F8D0E00102641 /* ShokuSukaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FDE8341E7F8D0E00102641 /* ShokuSukaRequest.swift */; };
-		F7FDE8371E7F8D6200102641 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FDE8361E7F8D6200102641 /* APIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,10 +90,13 @@
 		F7ADEE881E7EAB31004EE047 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		F7ADEE8A1E7EABA7004EE047 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		F7D3330B1E7FA10100354B93 /* S3Uploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3Uploader.swift; sourceTree = "<group>"; };
+		F7D3330D1E7FA81900354B93 /* GetUserTimeLineRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetUserTimeLineRequest.swift; path = connection/GetUserTimeLineRequest.swift; sourceTree = "<group>"; };
+		F7D3330F1E7FA89E00354B93 /* FBPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPosts.swift; sourceTree = "<group>"; };
+		F7D333111E7FB26400354B93 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7D333121E7FB26400354B93 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		F7FDE8301E7F7A2400102641 /* FacebookShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookShare.framework; path = Carthage/Build/iOS/FacebookShare.framework; sourceTree = "<group>"; };
 		F7FDE8321E7F868F00102641 /* ShokuSuka-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ShokuSuka-iOS.entitlements"; sourceTree = "<group>"; };
 		F7FDE8341E7F8D0E00102641 /* ShokuSukaRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShokuSukaRequest.swift; path = connection/ShokuSukaRequest.swift; sourceTree = "<group>"; };
-		F7FDE8361E7F8D6200102641 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +227,8 @@
 			children = (
 				F74DBDCC1E7F6BD6006A0A2C /* PlaceHolderTextView.swift */,
 				F74DBDC51E7F4BF7006A0A2C /* PostTableViewCell.swift */,
+				F7D333111E7FB26400354B93 /* ImageCollectionViewCell.swift */,
+				F7D333121E7FB26400354B93 /* ImageCollectionViewCell.xib */,
 				F74DBDC61E7F4BF7006A0A2C /* PostTableViewCell.xib */,
 			);
 			path = views;
@@ -238,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				F74DBDCA1E7F5FEC006A0A2C /* User.swift */,
+				F7D3330F1E7FA89E00354B93 /* FBPosts.swift */,
 			);
 			name = models;
 			path = src/views;
@@ -269,7 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				F7FDE8341E7F8D0E00102641 /* ShokuSukaRequest.swift */,
-				F7FDE8361E7F8D6200102641 /* APIResponse.swift */,
+				F7D3330D1E7FA81900354B93 /* GetUserTimeLineRequest.swift */,
 				F7D3330B1E7FA10100354B93 /* S3Uploader.swift */,
 			);
 			name = connection;
@@ -370,6 +379,7 @@
 				F74DBDC81E7F4BF7006A0A2C /* PostTableViewCell.xib in Resources */,
 				F732A3B81E7E8A59005650EE /* Assets.xcassets in Resources */,
 				F74DBDBA1E7ED0D8006A0A2C /* Home.xcassets in Resources */,
+				F7D333141E7FB26400354B93 /* ImageCollectionViewCell.xib in Resources */,
 				F732A3B31E7E8A59005650EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,16 +432,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F732A3B61E7E8A59005650EE /* ShokuSuka_iOS.xcdatamodeld in Sources */,
+				F7D3330E1E7FA81900354B93 /* GetUserTimeLineRequest.swift in Sources */,
 				F74DBDBF1E7F4982006A0A2C /* UIColor.swift in Sources */,
 				F74DBDC71E7F4BF7006A0A2C /* PostTableViewCell.swift in Sources */,
 				F732A3B01E7E8A59005650EE /* LoginViewController.swift in Sources */,
 				F74DBDCB1E7F5FEC006A0A2C /* User.swift in Sources */,
-				F7FDE8371E7F8D6200102641 /* APIResponse.swift in Sources */,
 				F732A3AE1E7E8A59005650EE /* AppDelegate.swift in Sources */,
 				F7D3330C1E7FA10100354B93 /* S3Uploader.swift in Sources */,
 				F74DBDB41E7ECB4B006A0A2C /* HomeViewController.swift in Sources */,
 				F74DBDCD1E7F6BD6006A0A2C /* PlaceHolderTextView.swift in Sources */,
+				F7D333131E7FB26400354B93 /* ImageCollectionViewCell.swift in Sources */,
 				F7FDE8351E7F8D0E00102641 /* ShokuSukaRequest.swift in Sources */,
+				F7D333101E7FA89E00354B93 /* FBPosts.swift in Sources */,
 				F74DBDBC1E7F4782006A0A2C /* UpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +589,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "ShokuSuka-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.natmark.ShokuSuka-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -594,6 +607,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "ShokuSuka-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.natmark.ShokuSuka-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";

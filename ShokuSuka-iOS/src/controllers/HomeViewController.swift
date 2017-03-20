@@ -10,12 +10,16 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import PINRemoteImage
+import APIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var postSegueBtn: UIButton!
     @IBOutlet weak var rankingView: UIView!
     @IBOutlet weak var userIconBtn: UIButton!
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var posts: [FBPosts] = []
     var user: User?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,24 @@ class HomeViewController: UIViewController {
         self.rankingView.isHidden = true
         
         self.userIconBtn.pin_setImage(from: URL(string: (user?.thumbnaiUrl)!))
+        
+        let request = GetUserTimeLineRequest()
+        Session.send(request) { result in
+            switch result {
+            case .success(let response):
+                self.posts = response.fbPosts
+                print(self.posts)
+                self.tableView.reloadData()
+                
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
+
+        let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "postCell")
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
@@ -48,7 +70,22 @@ class HomeViewController: UIViewController {
         nextView.user = user
         self.navigationController?.pushViewController(nextView, animated: true)
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 再利用するCellを取得する.
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+
+        cell.userNameLabel.text = posts[indexPath.row].name
+        cell.captionTextView.text = posts[indexPath.row].message
+        cell.urls = posts[indexPath.row].urls
+        cell.collectionView.reloadData()
+        return cell
+    }
 
     /*
     // MARK: - Navigation

@@ -15,7 +15,7 @@ protocol ShokuSukaRequest: Request {
 
 extension ShokuSukaRequest {
     var baseURL: URL {
-        return URL(string: "https://theoldmoon0602.tk/inspix")!
+        return URL(string: "http://133.242.227.228:8765/")!
     }
     func intercept(urlRequest: URLRequest) throws -> URLRequest {
         var urlRequest = urlRequest
@@ -42,19 +42,3 @@ struct ShokuSukaError: Error {
         message = (dictionary?["error"] as? Array)?.first ?? "Unknown error occurred"
     }
 }
-extension ShokuSukaRequest where Self.Response: Decodable {
-    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Self.Response {
-        do {
-            let response = try APIResponse<Self.Response>.decode(object)
-            guard let data = response.data else {
-                throw ResponseError.unexpectedObject(object)
-            }
-            
-            return data
-        } catch {
-            throw ResponseError.unexpectedObject(object)
-        }
-    }
-    
-}
-

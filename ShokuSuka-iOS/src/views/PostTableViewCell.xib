@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="370"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="370"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="369"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_sample" translatesAutoresizingMaskIntoConstraints="NO" id="WOU-Wi-p1P">
@@ -57,8 +57,8 @@
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="09X-af-GcY">
                         <rect key="frame" x="8" y="220" width="304" height="142"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lmA-cN-cEV">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lmA-cN-cEV">
+                            <size key="itemSize" width="140" height="140"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -84,6 +84,12 @@
                     <constraint firstItem="khE-pd-0jQ" firstAttribute="top" secondItem="WOU-Wi-p1P" secondAttribute="top" constant="6" id="qDf-cN-kg7"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="captionTextView" destination="79M-jc-cq3" id="k8b-03-Pdp"/>
+                <outlet property="collectionView" destination="09X-af-GcY" id="XUL-T2-OZT"/>
+                <outlet property="thumbnailImageView" destination="WOU-Wi-p1P" id="9PD-u3-Vp8"/>
+                <outlet property="userNameLabel" destination="khE-pd-0jQ" id="A0f-MY-8bl"/>
+            </connections>
             <point key="canvasLocation" x="34" y="272"/>
         </tableViewCell>
     </objects>
